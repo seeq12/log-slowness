@@ -6,3 +6,5 @@ See comments in `src/ShowLogSlowness.java` for more info.
 
 Invoke the test by executing `java -cp out/production/SlowLogFile ShowLogSlowness`
 in the root folder of this project.
+
+Requires Java 8 or later.
