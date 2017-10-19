@@ -4,5 +4,5 @@ before each log file write operation and rollover the file if necessary.
 
 See comments in `src/ShowLogSlowness.java` for more info.
 
-Invoke the test by executing `java -cp out\production\SlowLogFile ShowLogSlowness`
+Invoke the test by executing `java -cp out/production/SlowLogFile ShowLogSlowness`
 in the root folder of this project.
