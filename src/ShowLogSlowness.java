@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -26,6 +27,8 @@ public class ShowLogSlowness {
 
         Path currentDirectory = Paths.get(System.getProperty("user.dir"));
         try {
+            Charset charset = Charset.forName("UTF-8");
+            System.out.println("Using charset: " + charset);
             Files.list(currentDirectory).filter(p1 -> p1.toString().endsWith(".log")).forEach(p1 -> {
                 try {
                     Path p2 = Paths.get(p1.toString() + ".test");
@@ -36,7 +39,7 @@ public class ShowLogSlowness {
                         long length = 0;
                         for (int i = 0; i < 20; i++) {
                             length = file.length();
-                            outputStream.write("Appended line\n".getBytes());
+                            outputStream.write("Appended line\n".getBytes(charset));
                         }
                         long stop = System.currentTimeMillis();
                         System.out.format("%s -> %6d ms -> %d bytes\n", file, stop - start, length);
